@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cooking Gas Refill &amp; Cylinders — Biofran Ventures</title>
+<meta name="description" content="Certified LPG cooking gas refill service, digital weighing, leak testing, camp gas, cookers, and stoves at Biofran Ventures physical store.">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="/css/all.css">
+</head>
+<body data-page-init="gas">
+
+<div id="site-header"></div>
+<div id="site-chrome"></div>
+
+<main>
+  <section class="band band--gas">
+    <div class="container-wide band__inner">
+      <div>
+        <span class="eyebrow">Physical Store Speciality</span>
+        <h1 style="font-size:2.8rem;margin:.5rem 0 1rem">Certified LPG Cooking Gas &amp; Refills</h1>
+        <p class="hero__lead">
+          Bring your cylinder to our store or order doorstep exchange. Every refill is digitally weighed, leak-tested with soap solution, and safety-sealed in front of you.
+        </p>
+        <div class="row" style="gap:1rem;margin-top:1.5rem;flex-wrap:wrap">
+          <a class="btn btn--gold" href="tel:08141256339">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.1a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+            Gas Desk: 08141256339
+          </a>
+          <a class="btn btn--ghost" href="#bookingSection">Book Refill Online</a>
+        </div>
+      </div>
+      <div class="band__art">
+        <img src="/img/c/gas-refill.svg?size=1400" alt="LPG Cooking Gas Refill Biofran Ventures" width="600" height="600">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-wide">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Interactive Pricing</span>
+          <h2>Select Your Cylinder Size</h2>
+          <p>Real-time refill pricing based on today's certified market rate.</p>
+        </div>
+      </div>
+
+      <div class="gas-calc-grid" style="display:grid;grid-template-columns:1fr 380px;gap:2.5rem;align-items:start">
+        <div id="cylinderOptions" class="options-group" style="display:flex;flex-direction:column;gap:.8rem">
+          <!-- Rendered by gas.js -->
+        </div>
+
+        <div class="card" style="padding:2rem;position:sticky;top:5rem">
+          <span class="eyebrow">Selected Refill</span>
+          <h3 id="calcSelectedName" style="margin:.4rem 0">12.5kg Cooking Gas Refill</h3>
+          <div class="gold" id="calcSelectedPrice" style="font-size:2rem;font-weight:700;margin:1rem 0">₦15,500</div>
+          
+          <ul class="feature-list" style="margin-bottom:1.5rem">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold"><path d="M20 6L9 17l-5-5"/></svg> <span>Precision digital scale weighing</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold"><path d="M20 6L9 17l-5-5"/></svg> <span>High-pressure valve leak test</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold"><path d="M20 6L9 17l-5-5"/></svg> <span>Tamper-evident safety seal</span></li>
+          </ul>
+
+          <button class="btn btn--gold btn--lg" type="button" id="calcAddToCart" data-add="12-5kg-cooking-gas-refill" style="width:100%">
+            Add Refill to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gas Refill Booking Quick Form -->
+  <section class="section" id="bookingSection" style="background:var(--surface)">
+    <div class="container" style="max-width:720px">
+      <div class="section-head section-head--center">
+        <span class="eyebrow">Quick Refill Booking</span>
+        <h2>Schedule a Refill or Doorstep Delivery</h2>
+        <p>Fill this quick booking and our gas technician will prepare your cylinder immediately.</p>
+      </div>
+
+      <div id="gasFormHost">
+        <form id="gasBookingForm" class="card" style="padding:2.5rem">
+          <div class="grid grid--2" style="gap:1.2rem">
+            <div class="field">
+              <label for="gasName">Your Name *</label>
+              <input class="field-input" type="text" id="gasName" name="name" required placeholder="e.g. John Doe">
+            </div>
+            <div class="field">
+              <label for="gasPhone">Phone Number *</label>
+              <input class="field-input" type="tel" id="gasPhone" name="phone" required placeholder="0814 125 6339">
+            </div>
+          </div>
+
+          <div class="grid grid--2" style="gap:1.2rem;margin-top:1.2rem">
+            <div class="field">
+              <label for="gasEmail">Email (optional)</label>
+              <input class="field-input" type="email" id="gasEmail" name="email" placeholder="name@example.com">
+            </div>
+            <div class="field">
+              <label for="bookingCylinder">Cylinder Size *</label>
+              <select class="field-select" id="bookingCylinder" name="cylinder">
+                <option value="3kg">3kg Camp Cylinder</option>
+                <option value="6kg">6kg Household Cylinder</option>
+                <option value="12.5kg" selected>12.5kg Standard Family Cylinder</option>
+                <option value="50kg">50kg Commercial Cylinder</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field" style="margin-top:1.2rem">
+            <label for="gasMode">Fulfilment Mode</label>
+            <select class="field-select" id="gasMode" name="mode">
+              <option value="pickup">I will bring my cylinder to the store (Pickup)</option>
+              <option value="delivery">Doorstep Pickup &amp; Delivery within City</option>
+            </select>
+          </div>
+
+          <div class="field" style="margin-top:1.2rem">
+            <label for="gasAddress">Delivery Address (if requesting delivery)</label>
+            <input class="field-input" type="text" id="gasAddress" name="address" placeholder="Street address, building, or landmark">
+          </div>
+
+          <div class="field" style="margin-top:1.2rem">
+            <label for="gasMessage">Preferred Time / Special Notes</label>
+            <textarea class="field-input" id="gasMessage" name="message" rows="2" placeholder="e.g. I will arrive around 3:00 PM / Please test my valve"></textarea>
+          </div>
+
+          <button class="btn btn--gold btn--lg" type="submit" style="width:100%;margin-top:1.8rem">
+            Submit Refill Booking
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gas accessories & Stoves -->
+  <section class="section">
+    <div class="container-wide">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Gas Equipment</span>
+          <h2>Accessories, Stoves &amp; Camp Gas</h2>
+          <p>Certified regulators, safety hoses, single and double camp burners, and table cookers.</p>
+        </div>
+        <a class="btn btn--ghost" href="/shop?group=gas">View all gas products</a>
+      </div>
+
+      <div class="grid grid--4" id="gasProductsGrid">
+        <div class="spinner"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-floating"></div>
+
+<script src="/js/api.js"></script>
+<script src="/js/site.js"></script>
+<script src="/js/footer.js"></script>
+<script src="/js/components.js"></script>
+<script src="/js/pages/gas.js"></script>
+<script src="/js/boot.js"></script>
+</body>
+</html>

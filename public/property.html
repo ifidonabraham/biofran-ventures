@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Property Details — Biofran Properties</title>
+<meta name="description" content="View property photos, verified documentation, specifications and schedule an inspection with Biofran Properties.">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="/css/all.css">
+</head>
+<body data-page-init="property">
+
+<div id="site-header"></div>
+<div id="site-chrome"></div>
+
+<main>
+  <div class="page-head">
+    <div class="container-wide">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/properties">Properties</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page" id="propReference">Listing</span>
+      </nav>
+      <div class="page-head__row">
+        <div>
+          <div class="row" style="gap:.6rem;margin-bottom:.4rem">
+            <span class="badge" id="propPurposeBadge">For Sale</span>
+          </div>
+          <h1 id="propTitle">Loading Property Details…</h1>
+          <p class="dim" id="propLocation"></p>
+        </div>
+        <div>
+          <div class="gold" id="propPrice" style="font-size:2.2rem;font-weight:700"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-wide" style="padding-bottom:4rem">
+    <div class="pd-layout" style="display:grid;grid-template-columns:1fr 400px;gap:2.5rem;align-items:start">
+      <div>
+        <div class="pd-gallery" style="margin-bottom:2rem">
+          <div class="pd-main" style="position:relative">
+            <img id="propMainImage" src="" alt="" width="900" height="600" style="border-radius:8px;object-fit:cover;width:100%;height:auto;aspect-ratio:4/3">
+            <button class="card__tool" type="button" id="propPreviewBtn" title="Open high resolution preview"
+                    style="position:absolute;top:1rem;right:1rem;width:42px;height:42px;background:rgba(10,25,47,.85);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            </button>
+          </div>
+          <div class="pd-thumbs" id="propThumbs" style="display:flex;gap:.8rem;margin-top:.8rem"></div>
+        </div>
+
+        <div class="card" style="padding:2rem;margin-bottom:2rem">
+          <h3 style="margin-bottom:1.2rem">Key Features &amp; Specifications</h3>
+          <div class="grid grid--4" id="propSpecs" style="gap:1rem;margin-bottom:2rem"></div>
+
+          <h4>Overview</h4>
+          <p class="dim" id="propDescription" style="line-height:1.7;margin-bottom:2rem"></p>
+
+          <h4>Property Features</h4>
+          <ul id="propFeatures" style="list-style:none;padding:0;margin-bottom:2rem"></ul>
+
+          <h4>Verified Documentation</h4>
+          <ul id="propDocs" style="list-style:none;padding:0"></ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="card" style="padding:2rem;position:sticky;top:5rem">
+          <span class="eyebrow" style="color:var(--gold)">Biofran Properties Agency</span>
+          <h3 style="margin:.4rem 0 1rem">Schedule an Inspection</h3>
+          <p class="dim" style="font-size:.88rem;margin-bottom:1.5rem">
+            Book a physical or virtual viewing accompanied by our licensed property agent.
+          </p>
+
+          <form id="inspectionForm">
+            <div class="field">
+              <label for="inspName">Your Full Name *</label>
+              <input class="field-input" type="text" id="inspName" name="name" required placeholder="e.g. Samuel Okon">
+            </div>
+
+            <div class="field" style="margin-top:1rem">
+              <label for="inspPhone">Phone Number *</label>
+              <input class="field-input" type="tel" id="inspPhone" name="phone" required placeholder="0803 721 1227">
+            </div>
+
+            <div class="field" style="margin-top:1rem">
+              <label for="inspEmail">Email Address</label>
+              <input class="field-input" type="email" id="inspEmail" name="email" placeholder="name@example.com">
+            </div>
+
+            <div class="field" style="margin-top:1rem">
+              <label for="inspDate">Preferred Inspection Date</label>
+              <input class="field-input" type="date" id="inspDate" name="date">
+            </div>
+
+            <div class="field" style="margin-top:1rem">
+              <label for="inspNotes">Questions or Notes</label>
+              <textarea class="field-input" id="inspNotes" name="notes" rows="2" placeholder="Any specific requirements or timings"></textarea>
+            </div>
+
+            <button class="btn btn--gold btn--lg" type="submit" style="width:100%;margin-top:1.5rem">
+              Request Guided Inspection
+            </button>
+          </form>
+
+          <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+            <p class="dim" style="font-size:.82rem;margin-bottom:.8rem;text-align:center">Or contact the property agent directly:</p>
+            <div class="row" style="gap:.6rem;flex-direction:column">
+              <a class="btn btn--ghost btn--sm" id="propPhoneBtn" href="tel:07045723013" style="width:100%">
+                Call Desk: 07045723013
+              </a>
+              <a class="btn btn--ghost btn--sm" id="propWaBtn" href="#" target="_blank" rel="noopener" style="width:100%">
+                Inquire on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Listings -->
+    <section class="section" style="padding-top:3rem">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Similar Properties</span>
+          <h2>Other Listings in this Category</h2>
+        </div>
+      </div>
+      <div class="grid grid--3" id="propRelatedGrid"></div>
+    </section>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-floating"></div>
+
+<script src="/js/api.js"></script>
+<script src="/js/site.js"></script>
+<script src="/js/footer.js"></script>
+<script src="/js/components.js"></script>
+<script src="/js/pages/property.js"></script>
+<script src="/js/boot.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+/* -------------------------------------------------------------- buttons */
+
+.btn {
+  --btn-bg: transparent;
+  --btn-fg: var(--text);
+  --btn-bd: var(--line-strong);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.7rem;
+  border: 1px solid var(--btn-bd);
+  border-radius: 999px;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease),
+    background 0.22s var(--ease), color 0.22s var(--ease), border-color 0.22s var(--ease);
+}
+
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+.btn--gold {
+  --btn-bg: linear-gradient(135deg, var(--gold-400), var(--gold-600));
+  --btn-fg: var(--ink-900);
+  --btn-bd: transparent;
+  box-shadow: var(--shadow-gold);
+}
+
+.btn--gold:hover { box-shadow: 0 20px 52px rgba(212, 169, 74, 0.36); }
+
+.btn--ghost {
+  --btn-bg: rgba(255, 255, 255, 0.04);
+  --btn-bd: var(--line-strong);
+}
+
+.btn--ghost:hover {
+  --btn-bg: rgba(255, 255, 255, 0.09);
+  --btn-bd: var(--gold-400);
+  color: var(--gold-200);
+}
+
+.btn--light {
+  --btn-bg: var(--paper);
+  --btn-fg: var(--ink-900);
+  --btn-bd: transparent;
+}
+
+.btn--danger { --btn-bd: rgba(226, 86, 79, 0.5); --btn-fg: #ffb3ae; }
+.btn--danger:hover { --btn-bg: rgba(226, 86, 79, 0.14); }
+
+.btn--sm { padding: 0.6rem 1.15rem; font-size: 0.72rem; }
+.btn--lg { padding: 1.05rem 2.3rem; font-size: 0.86rem; }
+.btn--block { width: 100%; }
+.btn--icon { padding: 0.7rem; border-radius: 50%; width: 2.6rem; height: 2.6rem; }
+
+/* ---------------------------------------------------------------- chips */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+
+.chip:hover { border-color: var(--gold-400); color: var(--gold-200); }
+
+.chip.is-active {
+  background: linear-gradient(135deg, var(--gold-400), var(--gold-600));
+  border-color: transparent;
+  color: var(--ink-900);
+  font-weight: 600;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  background: var(--gold-500);
+  color: var(--ink-900);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.badge--sale { background: var(--danger); color: #fff; }
+.badge--new { background: var(--success); color: var(--ink-900); }
+.badge--gas { background: linear-gradient(135deg, #ff8a3d, #e2564f); color: #fff; }
+.badge--soft { background: rgba(255, 255, 255, 0.08); color: var(--text-muted); }
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.32rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
+}
+
+.status-pill[data-status="pending"] { color: var(--warning); border-color: rgba(233, 161, 59, 0.4); }
+.status-pill[data-status="confirmed"] { color: #7cc7ff; border-color: rgba(124, 199, 255, 0.4); }
+.status-pill[data-status="processing"] { color: #b79bff; border-color: rgba(183, 155, 255, 0.4); }
+.status-pill[data-status="ready"] { color: var(--gold-400); border-color: rgba(212, 169, 74, 0.45); }
+.status-pill[data-status="out-for-delivery"] { color: #ffb37c; border-color: rgba(255, 179, 124, 0.4); }
+.status-pill[data-status="completed"] { color: var(--success); border-color: rgba(63, 191, 127, 0.4); }
+.status-pill[data-status="cancelled"] { color: var(--danger); border-color: rgba(226, 86, 79, 0.4); }

@@ -1,0 +1,61 @@
+﻿C:\Users\PC\biofran ventures\public\css\cards.css
+C:\Users\PC\biofran ventures\public\css\components.css
+C:\Users\PC\biofran ventures\public\css\dashboard.css
+C:\Users\PC\biofran ventures\public\css\detail.css
+C:\Users\PC\biofran ventures\public\css\drawers.css
+C:\Users\PC\biofran ventures\public\css\forms.css
+C:\Users\PC\biofran ventures\public\css\layout.css
+C:\Users\PC\biofran ventures\public\css\main.css
+C:\Users\PC\biofran ventures\public\css\misc.css
+C:\Users\PC\biofran ventures\public\css\pages.css
+C:\Users\PC\biofran ventures\public\css\pages2.css
+C:\Users\PC\biofran ventures\public\css\shop.css
+C:\Users\PC\biofran ventures\public\js\api.js
+C:\Users\PC\biofran ventures\public\js\boot.js
+C:\Users\PC\biofran ventures\public\js\components.js
+C:\Users\PC\biofran ventures\public\js\footer.js
+C:\Users\PC\biofran ventures\public\js\site.js
+C:\Users\PC\biofran ventures\public\js\pages\cart.js
+C:\Users\PC\biofran ventures\public\js\pages\home.js
+C:\Users\PC\biofran ventures\public\js\pages\product.js
+C:\Users\PC\biofran ventures\public\js\pages\shop.js
+C:\Users\PC\biofran ventures\src\artwork.js
+C:\Users\PC\biofran ventures\src\catalog.js
+C:\Users\PC\biofran ventures\src\config.js
+C:\Users\PC\biofran ventures\src\icons.js
+C:\Users\PC\biofran ventures\src\utils.js
+C:\Users\PC\biofran ventures\src\db\index.js
+C:\Users\PC\biofran ventures\src\db\seed.js
+C:\Users\PC\biofran ventures\src\db\store.js
+C:\Users\PC\biofran ventures\src\db\seed-data\products.js
+C:\Users\PC\biofran ventures\src\db\seed-data\properties.js
+C:\Users\PC\biofran ventures\src\middleware\auth.js
+C:\Users\PC\biofran ventures\src\middleware\errors.js
+C:\Users\PC\biofran ventures\src\models\cart.js
+C:\Users\PC\biofran ventures\src\models\message.js
+C:\Users\PC\biofran ventures\src\models\order.js
+C:\Users\PC\biofran ventures\src\models\product.js
+C:\Users\PC\biofran ventures\src\models\property.js
+C:\Users\PC\biofran ventures\src\models\user.js
+C:\Users\PC\biofran ventures\src\routes\admin.js
+C:\Users\PC\biofran ventures\src\routes\auth.js
+C:\Users\PC\biofran ventures\src\routes\cart.js
+C:\Users\PC\biofran ventures\src\routes\catalog.js
+C:\Users\PC\biofran ventures\src\routes\contact.js
+C:\Users\PC\biofran ventures\src\routes\images.js
+C:\Users\PC\biofran ventures\src\routes\index.js
+C:\Users\PC\biofran ventures\src\routes\orders.js
+C:\Users\PC\biofran ventures\src\routes\properties.js
+C:\Users\PC\biofran ventures\src\routes\site.js
+C:\Users\PC\biofran ventures\tests\smoke.js
+.env.example
+.gitignore
+nodever.txt
+package-lock.json
+package.json
+server.js
+test.txt
+_deps.txt
+_files.txt
+_npm.txt
+_seedtest.txt

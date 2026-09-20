@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Account &amp; Order Tracking — Biofran Ventures</title>
+<meta name="description" content="View your order history, track deliveries by reference, and manage your account at Biofran Ventures.">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="/css/all.css">
+</head>
+<body data-page-init="account">
+
+<div id="site-header"></div>
+<div id="site-chrome"></div>
+
+<main>
+  <div class="page-head">
+    <div class="container-wide">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Account</span>
+      </nav>
+      <div class="page-head__row">
+        <div>
+          <span class="eyebrow">Customer Portal</span>
+          <h1 id="userGreeting">My Account</h1>
+        </div>
+        <div class="is-auth-only">
+          <button class="btn btn--ghost btn--sm" id="logoutBtn" type="button">Sign Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-wide" style="padding-bottom:4rem">
+    <!-- Authenticated section -->
+    <div class="is-auth-only">
+      <div class="account-layout" style="display:grid;grid-template-columns:1fr 340px;gap:2.5rem;align-items:start">
+        <div>
+          <h2 style="margin-bottom:1.2rem">My Orders</h2>
+          <div id="accountOrders">
+            <div class="spinner"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card" style="padding:1.8rem;margin-bottom:1.5rem">
+            <h3 style="margin-bottom:1rem">Profile Details</h3>
+            <form id="profileForm">
+              <div class="field">
+                <label for="profName">Name</label>
+                <input class="field-input" type="text" id="profName" name="name" required>
+              </div>
+              <div class="field" style="margin-top:1rem">
+                <label for="profEmail">Email</label>
+                <input class="field-input" type="email" id="profEmail" name="email" disabled style="opacity:.6">
+              </div>
+              <div class="field" style="margin-top:1rem">
+                <label for="profPhone">Phone Number</label>
+                <input class="field-input" type="tel" id="profPhone" name="phone">
+              </div>
+              <button class="btn btn--gold btn--sm" type="submit" style="width:100%;margin-top:1.2rem">
+                Update Profile
+              </button>
+            </form>
+          </div>
+
+          <div class="card" style="padding:1.8rem">
+            <h3 style="margin-bottom:1rem">Change Password</h3>
+            <form id="passwordForm">
+              <div class="field">
+                <label for="currPass">Current Password</label>
+                <input class="field-input" type="password" id="currPass" name="currentPassword" required>
+              </div>
+              <div class="field" style="margin-top:1rem">
+                <label for="newPass">New Password</label>
+                <input class="field-input" type="password" id="newPass" name="newPassword" minlength="6" required>
+              </div>
+              <button class="btn btn--ghost btn--sm" type="submit" style="width:100%;margin-top:1.2rem">
+                Save Password
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Track Order (visible to all, highlighted for guests) -->
+    <div style="max-width:640px;margin:2rem auto">
+      <div class="card" style="padding:2.5rem">
+        <div style="text-align:center;margin-bottom:1.5rem">
+          <span class="eyebrow">Instant Status</span>
+          <h2>Track Your Order</h2>
+          <p class="dim" style="font-size:.88rem;margin-top:.4rem">
+            Enter your order reference (e.g. BFV-12345678) and email address to check delivery status.
+          </p>
+        </div>
+
+        <form id="trackOrderForm">
+          <div class="field">
+            <label for="trackRef">Order Reference *</label>
+            <input class="field-input" type="text" id="trackRef" name="reference" required placeholder="BFV-…">
+          </div>
+          <div class="field" style="margin-top:1rem">
+            <label for="trackEmail">Email Address</label>
+            <input class="field-input" type="email" id="trackEmail" name="email" placeholder="Email used at checkout">
+          </div>
+          <button class="btn btn--gold" type="submit" style="width:100%;margin-top:1.5rem">
+            Track Order
+          </button>
+        </form>
+
+        <div id="trackResult"></div>
+
+        <div class="is-guest-only center dim" style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+          Want to view your complete order history? <a href="/login" class="gold">Sign in</a> or <a href="/register" class="gold">create an account</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-floating"></div>
+
+<script src="/js/api.js"></script>
+<script src="/js/site.js"></script>
+<script src="/js/footer.js"></script>
+<script src="/js/components.js"></script>
+<script src="/js/pages/account.js"></script>
+<script src="/js/boot.js"></script>
+</body>
+</html>

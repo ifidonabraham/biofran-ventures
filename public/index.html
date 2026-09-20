@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biofran Ventures — Fashion, Appliances, Gas &amp; Property in Nigeria</title>
+<meta name="description" content="Biofran Ventures — an online store for clothing, shoes, bags, watches and home appliances, a physical LPG gas store for refills, gas accessories, camp gas and stoves, plus Biofran Properties, a trusted housing agent.">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="/css/all.css">
+</head>
+<body data-page-init="home">
+
+<div id="site-header"></div>
+<div id="site-chrome"></div>
+
+<main>
+  <section class="hero">
+    <div class="container-wide hero__inner">
+      <div>
+        <span class="eyebrow">Fashion · Appliances · Gas · Property</span>
+        <h1 class="hero__title">Everything for your home,<br>worn, <em>powered</em> and lived in.</h1>
+        <p class="hero__lead">
+          Shop quality clothing, shoes, bags, watches and home appliances online — or visit our
+          physical store for LPG refills, gas accessories, camp gas and stoves. Looking for a
+          place to live? <strong>Biofran Properties</strong> is your housing agent.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--gold btn--lg" href="/shop">Shop the store</a>
+          <a class="btn btn--ghost btn--lg" href="/gas">Book a gas refill</a>
+          <a class="btn btn--ghost btn--lg" href="/properties">Find a property</a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat"><strong id="statProducts">60+</strong><span>Products in stock</span></div>
+          <div class="hero__stat"><strong>4</strong><span>Cylinder sizes refilled</span></div>
+          <div class="hero__stat"><strong>24h</strong><span>Gas delivery response</span></div>
+          <div class="hero__stat"><strong>100%</strong><span>Weighed &amp; sealed refills</span></div>
+        </div>
+      </div>
+      <div class="hero__art">
+        <img src="/img/hero.svg?size=1200" alt="Biofran Ventures — fashion, appliances, gas and property" width="1200" height="1200">
+        <div class="hero__art-tag" id="heroTag">Fashion, Appliances, Gas &amp; Property — all in one place.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container-wide">
+      <div class="trust reveal">
+        <div class="trust__item">
+          <div class="trust__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="1" y="6" width="14" height="10" rx="2"/><path d="M15 10h4l3 3v3h-7z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
+          <div><h4>Nationwide delivery</h4><p>Same day within the city, 2–5 days nationwide. Free above ₦150,000.</p></div>
+        </div>
+        <div class="trust__item">
+          <div class="trust__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/></svg></div>
+          <div><h4>Certified gas safety</h4><p>Every refill is digitally weighed, leak-tested and sealed in front of you.</p></div>
+        </div>
+        <div class="trust__item">
+          <div class="trust__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h3v5H5a1 1 0 0 1-1-1zM20 14h-3v5h2a1 1 0 0 0 1-1z"/></svg></div>
+          <div><h4>Real people, real numbers</h4><p>Three dedicated lines for sales, gas and property — call us any day.</p></div>
+        </div>
+        <div class="trust__item">
+          <div class="trust__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0l-8-8V3h9.6l8.4 8.4a2 2 0 0 1 0 2z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
+          <div><h4>Warranty &amp; returns</h4><p>Appliances carry warranty; unused items can be returned within 7 days.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container-wide">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Shop by category</span>
+          <h2>Three departments, one trusted store</h2>
+          <p>Fashion &amp; lifestyle, home appliances, and our physical store speciality — gas, refills and stoves.</p>
+        </div>
+        <a class="btn btn--ghost" href="/shop">View all products</a>
+      </div>
+      <div class="grid grid--4" id="homeCategories"></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container-wide">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Handpicked</span>
+          <h2>Featured this week</h2>
+          <p>Our best sellers across fashion, appliances and the gas store.</p>
+        </div>
+        <a class="btn btn--ghost" href="/shop?sort=rating">Top rated</a>
+      </div>
+      <div class="grid grid--4" id="homeFeatured"></div>
+    </div>
+  </section>
+<section class="band band--gas">
+    <div class="container-wide band__inner">
+      <div>
+        <span class="eyebrow">Our physical store speciality</span>
+        <h2>LPG gas, refills &amp; stoves — done safely</h2>
+        <p>
+          Bring your cylinder in or let us collect it. We refill 5kg, 12.5kg, 25kg and 50kg
+          cylinders, weigh every one on a digital scale, leak-test the valve and seal it before
+          it leaves the store. Gas accessories, camp gas, camp stoves and full cookers are all
+          available on the shelf.
+        </p>
+      </div>
+      <div class="stack" style="gap:.7rem">
+        <a class="btn btn--gold" href="/gas">Book a refill today</a>
+        <a class="btn btn--ghost" href="tel:+2348141256339">Call the gas desk: 08141256339</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-wide">
+      <div class="section-head section-head--center">
+        <span class="eyebrow">Store services</span>
+        <h2>Everything we do at the physical store</h2>
+        <p>Walk in, order online, or call the gas desk — whichever is easiest for you.</p>
+      </div>
+      <div class="grid grid--3" id="homeServices"></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container-wide">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">New arrivals</span>
+          <h2>Just landed in store</h2>
+        </div>
+        <a class="btn btn--ghost" href="/shop?sort=newest">See all new arrivals</a>
+      </div>
+      <div class="grid grid--4" id="homeNewest"></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container-wide">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">On offer</span>
+          <h2>Save on these picks</h2>
+        </div>
+        <a class="btn btn--ghost" href="/shop?onSale=true">All offers</a>
+      </div>
+      <div class="grid grid--4" id="homeSale"></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container-wide band__inner">
+      <div>
+        <span class="eyebrow">Biofran Properties</span>
+        <h2>Your trusted housing agent</h2>
+        <p id="homePropertyBlurb">
+          Our property desk handles house sales, rentals, short-lets, land and commercial space —
+          with verified titles and guided inspections.
+        </p>
+      </div>
+      <div class="stack" style="gap:.7rem">
+        <a class="btn btn--gold" href="/properties">Browse listings</a>
+        <a class="btn btn--ghost" href="tel:+2347045723013">Call 07045723013</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-wide">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Featured listings</span>
+          <h2>Homes &amp; land available now</h2>
+          <p>Sales, rentals, short-lets and land — inspected and documented by Biofran Properties.</p>
+        </div>
+        <a class="btn btn--ghost" href="/properties">All listings</a>
+      </div>
+      <div class="grid grid--3" id="homeProperties"></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container-wide">
+      <div class="section-head section-head--center">
+        <span class="eyebrow">How it works</span>
+        <h2>Ordering from Biofran Ventures</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step__num">01</span>
+          <h4>Browse &amp; add to cart</h4>
+          <p>Pick fashion, appliances or a gas service. Every item has a clear price, stock note and high-resolution preview.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">02</span>
+          <h4>Check out in minutes</h4>
+          <p>Enter your details, choose pickup or delivery, and select how you want to pay. No card details needed.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">03</span>
+          <h4>We confirm by phone</h4>
+          <p>Our team calls you on the number you provided to confirm the order, timing and any special instructions.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">04</span>
+          <h4>Collect or receive it</h4>
+          <p>Pick up at the store, or we deliver — including doorstep delivery of your filled and sealed gas cylinder.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-floating"></div>
+
+<script src="/js/api.js"></script>
+<script src="/js/site.js"></script>
+<script src="/js/footer.js"></script>
+<script src="/js/components.js"></script>
+<script src="/js/pages/home.js"></script>
+<script src="/js/boot.js"></script>
+</body>
+</html>

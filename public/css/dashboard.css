@@ -1,0 +1,157 @@
+/* ==========================================================================
+   Property listings, filters & price tags
+   ========================================================================== */
+
+.filter-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.9rem;
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.03);
+  margin-bottom: 2rem;
+}
+
+.filter-bar .field > label { font-size: 0.68rem; }
+
+.badge-list { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.9rem 0; }
+
+.price-tag {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold-400);
+}
+
+.price-tag small {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  font-family: var(--sans);
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   Account & admin dashboards
+   ========================================================================== */
+
+.account-layout {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 2.2rem;
+  align-items: start;
+  padding-bottom: 4rem;
+}
+
+@media (max-width: 880px) { .account-layout { grid-template-columns: 1fr; } }
+
+.account-nav {
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.03);
+  position: sticky;
+  top: calc(var(--header-h) + 18px);
+}
+
+@media (max-width: 880px) { .account-nav { position: static; } }
+
+.account-nav button {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+  margin-bottom: 0.2rem;
+  transition: all 0.2s var(--ease);
+}
+
+.account-nav button:hover { background: rgba(255, 255, 255, 0.06); color: var(--gold-200); }
+.account-nav button.is-active { background: rgba(212, 169, 74, 0.16); color: var(--gold-100); font-weight: 600; }
+
+.panel {
+  padding: 1.8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015));
+}
+
+.panel + .panel { margin-top: 1.4rem; }
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  padding: 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.015));
+}
+
+.stat-card__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.4rem;
+}
+
+.stat-card__value { font-family: var(--serif); font-size: 1.9rem; color: var(--gold-400); line-height: 1; }
+.stat-card__sub { font-size: 0.79rem; color: var(--text-dim); margin-top: 0.35rem; }
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  min-width: 640px;
+}
+
+table.data th {
+  text-align: left;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--gold-500);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+table.data td {
+  padding: 0.85rem 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--text-muted);
+  vertical-align: middle;
+}
+
+table.data tr:hover td { background: rgba(255, 255, 255, 0.03); }
+table.data td strong { color: var(--text); }
+
+.row-thumb { display: flex; align-items: center; gap: 0.75rem; }
+
+.row-thumb img {
+  width: 44px;
+  height: 44px;
+  border-radius: 9px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}

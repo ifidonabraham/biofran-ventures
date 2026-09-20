@@ -1,0 +1,31 @@
+{
+  "name": "biofran-ventures",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Biofran Ventures - e-commerce store for fashion, home appliances and LPG gas, plus Biofran Properties (housing agency).",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node src/db/seed.js --force",
+    "seed:reset": "node src/db/seed.js --force --wipe"
+  },
+  "keywords": [
+    "ecommerce",
+    "express",
+    "biofran",
+    "gas-refill",
+    "properties"
+  ],
+  "author": "Biofran Ventures",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0"
+  }
+}

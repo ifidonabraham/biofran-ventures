@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Administrator Dashboard — Biofran Ventures</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="/css/all.css">
+</head>
+<body data-page-init="admin">
+
+<div id="site-header"></div>
+<div id="site-chrome"></div>
+
+<main>
+  <!-- Admin Authentication Wall (shown if not logged in as admin) -->
+  <div id="adminAuthWall" class="container" style="max-width:440px;padding:5rem 1rem">
+    <div class="card" style="padding:2.5rem">
+      <div style="text-align:center;margin-bottom:1.5rem">
+        <span class="eyebrow" style="color:var(--gold)">Staff Access</span>
+        <h2>Admin Sign In</h2>
+        <p class="dim" style="font-size:.88rem;margin-top:.4rem">Administrator privileges required.</p>
+      </div>
+
+      <form id="adminLoginForm">
+        <div class="field">
+          <label for="adminEmail">Admin Email</label>
+          <input class="field-input" type="email" id="adminEmail" name="email" required placeholder="admin@biofranventures.com">
+        </div>
+
+        <div class="field" style="margin-top:1.2rem">
+          <label for="adminPassword">Password</label>
+          <input class="field-input" type="password" id="adminPassword" name="password" required placeholder="••••••••">
+        </div>
+
+        <button class="btn btn--gold btn--lg" type="submit" style="width:100%;margin-top:1.8rem">
+          Enter Dashboard
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Dashboard Content -->
+  <div id="adminDashboardContent" class="container-wide" style="display:none;padding-top:2rem;padding-bottom:4rem">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;flex-wrap:wrap;gap:1rem">
+      <div>
+        <span class="eyebrow" style="color:var(--gold)">Management Portal</span>
+        <h1>Store &amp; Operations Dashboard</h1>
+      </div>
+      <div class="row" style="gap:.8rem">
+        <a class="btn btn--ghost btn--sm" href="/api/health" target="_blank">API Health Probe</a>
+      </div>
+    </div>
+
+    <!-- KPI Stats -->
+    <div class="grid grid--4" style="gap:1.5rem;margin-bottom:2.5rem">
+      <div class="card" style="padding:1.5rem">
+        <span class="dim" style="font-size:.82rem;text-transform:uppercase;letter-spacing:1px">Total Revenue</span>
+        <div class="gold" id="statRevenue" style="font-size:2rem;font-weight:700;margin-top:.5rem">₦0</div>
+      </div>
+      <div class="card" style="padding:1.5rem">
+        <span class="dim" style="font-size:.82rem;text-transform:uppercase;letter-spacing:1px">Total Orders</span>
+        <div id="statOrders" style="font-size:2rem;font-weight:700;margin-top:.5rem">0</div>
+      </div>
+      <div class="card" style="padding:1.5rem">
+        <span class="dim" style="font-size:.82rem;text-transform:uppercase;letter-spacing:1px">Active Customers</span>
+        <div id="statCustomers" style="font-size:2rem;font-weight:700;margin-top:.5rem">0</div>
+      </div>
+      <div class="card" style="padding:1.5rem">
+        <span class="dim" style="font-size:.82rem;text-transform:uppercase;letter-spacing:1px">Products Listed</span>
+        <div id="statProducts" style="font-size:2rem;font-weight:700;margin-top:.5rem">0</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 340px;gap:2rem;align-items:start;margin-bottom:3rem">
+      <!-- Orders Section -->
+      <div class="card" style="padding:2rem">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem">
+          <h3>Customer Orders</h3>
+          <div class="row" style="gap:.6rem;flex-wrap:wrap">
+            <input class="field-input" type="search" id="adminSearchOrder" placeholder="Search ref or customer…" style="width:200px;padding:.4rem .8rem;font-size:.88rem">
+            <select class="field-select" id="adminFilterStatus" style="padding:.4rem .8rem;font-size:.88rem">
+              <option value="">All Statuses</option>
+              <option value="pending">Pending</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="processing">Processing</option>
+              <option value="dispatched">Dispatched</option>
+              <option value="delivered">Delivered</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="overflow-x:auto">
+          <table class="table" style="width:100%;font-size:.88rem;border-collapse:collapse">
+            <thead>
+              <tr style="text-align:left;border-bottom:2px solid var(--border)">
+                <th style="padding:.8rem .6rem">Order Ref</th>
+                <th style="padding:.8rem .6rem">Customer</th>
+                <th style="padding:.8rem .6rem">Items</th>
+                <th style="padding:.8rem .6rem">Amount</th>
+                <th style="padding:.8rem .6rem">Delivery</th>
+                <th style="padding:.8rem .6rem">Status</th>
+                <th style="padding:.8rem .6rem">Change Status</th>
+              </tr>
+            </thead>
+            <tbody id="adminOrdersTable">
+              <!-- Orders injected by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Quick Add Product & Low Stock -->
+      <div>
+        <div class="card" style="padding:1.8rem;margin-bottom:2rem">
+          <h3 style="margin-bottom:1rem">Low Stock Alerts</h3>
+          <div id="adminLowStock">Loading alerts…</div>
+        </div>
+
+        <div class="card" style="padding:1.8rem">
+          <h3 style="margin-bottom:1rem">Quick Add Product</h3>
+          <form id="adminAddProductForm">
+            <div class="field">
+              <label for="prodName">Product Name *</label>
+              <input class="field-input" type="text" id="prodName" name="prodName" required placeholder="e.g. Oxford Button Shirt">
+            </div>
+            <div class="grid grid--2" style="gap:.8rem;margin-top:.8rem">
+              <div class="field">
+                <label for="prodPrice">Price (NGN) *</label>
+                <input class="field-input" type="number" id="prodPrice" name="prodPrice" required placeholder="25000">
+              </div>
+              <div class="field">
+                <label for="prodStock">Stock Qty</label>
+                <input class="field-input" type="number" id="prodStock" name="prodStock" value="10">
+              </div>
+            </div>
+            <div class="field" style="margin-top:.8rem">
+              <label for="prodCategory">Category</label>
+              <select class="field-select" id="prodCategory" name="prodCategory">
+                <option value="men-clothing">Men's Clothing</option>
+                <option value="women-clothing">Women's Clothing</option>
+                <option value="shoes">Shoes &amp; Footwear</option>
+                <option value="bags">Bags &amp; Luggage</option>
+                <option value="watches">Dress Watches</option>
+                <option value="home-appliances">Home Appliances</option>
+                <option value="gas-refill">Cooking Gas Refill</option>
+                <option value="gas-accessories">Gas Accessories</option>
+                <option value="camp-gas">Camp Gas</option>
+                <option value="cooking-stoves">Cooking Stoves</option>
+              </select>
+            </div>
+            <div class="field" style="margin-top:.8rem">
+              <label for="prodBrand">Brand / Collection</label>
+              <input class="field-input" type="text" id="prodBrand" name="prodBrand" placeholder="Biofran Select">
+            </div>
+            <div class="field" style="margin-top:.8rem">
+              <label for="prodDesc">Short Description</label>
+              <textarea class="field-input" id="prodDesc" name="prodDesc" rows="2" placeholder="Quality materials and description…"></textarea>
+            </div>
+            <button class="btn btn--gold btn--sm" type="submit" style="width:100%;margin-top:1.2rem">
+              Publish Product
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enquiries & Messages -->
+    <div class="card" style="padding:2rem;margin-bottom:3rem">
+      <h3 style="margin-bottom:1.2rem">Customer Enquiries &amp; Gas Bookings</h3>
+      <div style="overflow-x:auto">
+        <table class="table" style="width:100%;font-size:.88rem;border-collapse:collapse">
+          <thead>
+            <tr style="text-align:left;border-bottom:2px solid var(--border)">
+              <th style="padding:.8rem .6rem">Received</th>
+              <th style="padding:.8rem .6rem">Customer</th>
+              <th style="padding:.8rem .6rem">Topic</th>
+              <th style="padding:.8rem .6rem">Message / Requirements</th>
+              <th style="padding:.8rem .6rem">Action</th>
+            </tr>
+          </thead>
+          <tbody id="adminEnquiriesTable">
+            <!-- Enquiries injected by admin.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Customers List -->
+    <div class="card" style="padding:2rem">
+      <h3 style="margin-bottom:1.2rem">Registered Customers</h3>
+      <div style="overflow-x:auto">
+        <table class="table" style="width:100%;font-size:.88rem;border-collapse:collapse">
+          <thead>
+            <tr style="text-align:left;border-bottom:2px solid var(--border)">
+              <th style="padding:.8rem .6rem">Name</th>
+              <th style="padding:.8rem .6rem">Email</th>
+              <th style="padding:.8rem .6rem">Phone</th>
+              <th style="padding:.8rem .6rem">Orders Placed</th>
+              <th style="padding:.8rem .6rem">Lifetime Spend</th>
+            </tr>
+          </thead>
+          <tbody id="adminCustomersTable">
+            <!-- Customers injected by admin.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-floating"></div>
+
+<script src="/js/api.js"></script>
+<script src="/js/site.js"></script>
+<script src="/js/footer.js"></script>
+<script src="/js/components.js"></script>
+<script src="/js/pages/admin.js"></script>
+<script src="/js/boot.js"></script>
+</body>
+</html>

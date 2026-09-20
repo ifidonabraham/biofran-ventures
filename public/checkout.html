@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout — Biofran Ventures</title>
+<meta name="description" content="Complete your order with convenient delivery and payment options at Biofran Ventures Nigeria.">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="/css/all.css">
+</head>
+<body data-page-init="checkout">
+
+<div id="site-header"></div>
+<div id="site-chrome"></div>
+
+<main>
+  <div class="page-head">
+    <div class="container-wide">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/cart">Cart</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Checkout</span>
+      </nav>
+      <div class="page-head__row">
+        <div>
+          <span class="eyebrow">Complete Order</span>
+          <h1>Checkout</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-wide" id="checkoutHost" style="padding-bottom:4rem">
+    <div class="checkout-layout" style="display:grid;grid-template-columns:1fr 420px;gap:2.5rem;align-items:start">
+      <form id="checkoutForm" class="card" style="padding:2rem">
+        <h3 style="margin-bottom:1.2rem">1. Contact &amp; Delivery Information</h3>
+        <div class="grid grid--2" style="gap:1rem">
+          <div class="field">
+            <label for="name">Full Name *</label>
+            <input class="field-input" type="text" id="name" name="name" required placeholder="e.g. Chukwuma Adeleke">
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number *</label>
+            <input class="field-input" type="tel" id="phone" name="phone" required placeholder="e.g. 0803 721 1227">
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:1rem">
+          <label for="email">Email Address *</label>
+          <input class="field-input" type="email" id="email" name="email" required placeholder="name@example.com">
+        </div>
+
+        <div class="field" style="margin-top:1rem">
+          <label for="addressLine1">Delivery Address *</label>
+          <input class="field-input" type="text" id="addressLine1" name="addressLine1" required placeholder="Street address or nearest landmark">
+        </div>
+
+        <div class="grid grid--2" style="gap:1rem;margin-top:1rem">
+          <div class="field">
+            <label for="city">City / Area *</label>
+            <input class="field-input" type="text" id="city" name="city" required placeholder="e.g. Benin City">
+          </div>
+          <div class="field">
+            <label for="state">State</label>
+            <input class="field-input" type="text" id="state" name="state" placeholder="e.g. Edo State">
+          </div>
+        </div>
+
+        <h3 style="margin:2rem 0 1rem">2. Delivery Method</h3>
+        <div id="deliveryOptions" class="options-group">
+          <!-- Rendered by checkout.js -->
+        </div>
+
+        <h3 style="margin:2rem 0 1rem">3. Payment Method</h3>
+        <div id="paymentOptions" class="options-group">
+          <!-- Rendered by checkout.js -->
+        </div>
+
+        <div class="field" style="margin-top:1.5rem">
+          <label for="notes">Order Notes (optional)</label>
+          <textarea class="field-input" id="notes" name="notes" rows="2" placeholder="Special delivery instructions or gate directions"></textarea>
+        </div>
+
+        <button class="btn btn--gold btn--lg" type="submit" style="width:100%;margin-top:2rem">
+          Place Order &amp; Confirm
+        </button>
+      </form>
+
+      <div id="checkoutSummary">
+        <!-- Summary rendered by checkout.js -->
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-floating"></div>
+
+<script src="/js/api.js"></script>
+<script src="/js/site.js"></script>
+<script src="/js/footer.js"></script>
+<script src="/js/components.js"></script>
+<script src="/js/pages/checkout.js"></script>
+<script src="/js/boot.js"></script>
+</body>
+</html>

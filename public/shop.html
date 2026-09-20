@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop All Products — Biofran Ventures</title>
+<meta name="description" content="Browse clothing, shoes, bags, dress watches, home appliances, and gas accessories at Biofran Ventures Nigeria.">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="/css/all.css">
+</head>
+<body data-page-init="shop">
+
+<div id="site-header"></div>
+<div id="site-chrome"></div>
+
+<main>
+  <div class="page-head">
+    <div class="container-wide">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Shop Catalogue</span>
+      </nav>
+      <div class="page-head__row">
+        <div>
+          <span class="eyebrow">Catalogue</span>
+          <h1>All Products</h1>
+        </div>
+        <p class="dim" id="resultCount">Loading products…</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-wide shop-layout">
+    <aside class="shop-sidebar" id="shopFilters">
+      <!-- Filter controls rendered by shop.js -->
+    </aside>
+
+    <div class="shop-content">
+      <div class="shop-toolbar">
+        <button class="btn btn--ghost btn--sm" id="toggleFilters" type="button">
+          Filters
+        </button>
+        <div class="active-filters" id="activeFilters"></div>
+        <div class="shop-sort">
+          <label for="sortSelect" class="dim">Sort by:</label>
+          <select class="field-select" id="sortSelect">
+            <option value="featured">Featured</option>
+            <option value="newest">Newest arrivals</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="rating">Top rated</option>
+            <option value="popular">Most reviewed</option>
+            <option value="discount">Biggest discount</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid--3" id="productGrid">
+        <div class="spinner"></div>
+      </div>
+
+      <div class="pagination" id="pagination"></div>
+    </div>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-floating"></div>
+
+<script src="/js/api.js"></script>
+<script src="/js/site.js"></script>
+<script src="/js/footer.js"></script>
+<script src="/js/components.js"></script>
+<script src="/js/pages/shop.js"></script>
+<script src="/js/boot.js"></script>
+</body>
+</html>

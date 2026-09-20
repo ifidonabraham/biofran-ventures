@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign In — Biofran Ventures</title>
+<meta name="description" content="Sign in to your Biofran Ventures account to view your order history and manage your profile.">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="/css/all.css">
+</head>
+<body data-page-init="auth">
+
+<div id="site-header"></div>
+<div id="site-chrome"></div>
+
+<main>
+  <div class="container" style="max-width:460px;padding:4rem 1rem">
+    <div class="card" style="padding:2.5rem">
+      <div style="text-align:center;margin-bottom:1.8rem">
+        <span class="eyebrow">Welcome Back</span>
+        <h2>Sign In</h2>
+        <p class="dim" style="font-size:.88rem;margin-top:.4rem">
+          Enter your credentials to access your orders and account.
+        </p>
+      </div>
+
+      <form id="loginForm">
+        <div class="field">
+          <label for="loginEmail">Email Address</label>
+          <input class="field-input" type="email" id="loginEmail" name="email" required placeholder="name@example.com">
+        </div>
+
+        <div class="field" style="margin-top:1.2rem">
+          <label for="loginPassword">Password</label>
+          <input class="field-input" type="password" id="loginPassword" name="password" required placeholder="••••••••">
+        </div>
+
+        <button class="btn btn--gold btn--lg" type="submit" style="width:100%;margin-top:1.8rem">
+          Sign In
+        </button>
+      </form>
+
+      <div class="center dim" style="font-size:.88rem;margin-top:1.8rem">
+        Don't have an account yet? <a href="/register" class="gold">Create account</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-floating"></div>
+
+<script src="/js/api.js"></script>
+<script src="/js/site.js"></script>
+<script src="/js/footer.js"></script>
+<script src="/js/components.js"></script>
+<script src="/js/pages/auth.js"></script>
+<script src="/js/boot.js"></script>
+</body>
+</html>
