@@ -81,6 +81,7 @@
 
 .hero__art {
   position: relative;
+  aspect-ratio: 16 / 9;
   border-radius: var(--radius-xl);
   overflow: hidden;
   border: 1px solid var(--line-strong);
@@ -88,7 +89,12 @@
   background: var(--ink-800);
 }
 
-.hero__art img { width: 100%; }
+.hero__art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
 .hero__art-tag {
   position: absolute;
@@ -198,3 +204,36 @@
 
 .band h2 { margin-bottom: 0.5rem; }
 .band p { color: var(--text-muted); margin: 0; max-width: 62ch; }
+
+/* ------------------------------------------------------------- gas page */
+.gas-calc-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 2.2rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .gas-calc-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------------------------------------------------------- property bar */
+.prop-filter-bar {
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+@media (max-width: 768px) {
+  .prop-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -18,9 +18,9 @@
 <main>
   <div class="page-head">
     <div class="container-wide">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
+      <nav class="crumbs" aria-label="Breadcrumb">
         <a href="/">Home</a>
-        <span aria-hidden="true">/</span>
+        <span class="sep">/</span>
         <span aria-current="page">Shop Catalogue</span>
       </nav>
       <div class="page-head__row">
@@ -28,25 +28,28 @@
           <span class="eyebrow">Catalogue</span>
           <h1>All Products</h1>
         </div>
-        <p class="dim" id="resultCount">Loading products…</p>
+        <p class="toolbar__count" id="resultCount">Loading products…</p>
       </div>
     </div>
   </div>
 
   <div class="container-wide shop-layout">
-    <aside class="shop-sidebar" id="shopFilters">
+    <aside class="filters shop-sidebar" id="shopFilters">
       <!-- Filter controls rendered by shop.js -->
     </aside>
 
     <div class="shop-content">
-      <div class="shop-toolbar">
-        <button class="btn btn--ghost btn--sm" id="toggleFilters" type="button">
-          Filters
-        </button>
-        <div class="active-filters" id="activeFilters"></div>
-        <div class="shop-sort">
-          <label for="sortSelect" class="dim">Sort by:</label>
-          <select class="field-select" id="sortSelect">
+      <div class="toolbar shop-toolbar">
+        <div class="row" style="gap:0.75rem;align-items:center;flex-wrap:wrap">
+          <button class="btn btn--ghost btn--sm" id="toggleFilters" type="button">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>
+            Filters
+          </button>
+          <div class="active-filters" id="activeFilters" style="margin-bottom:0"></div>
+        </div>
+        <div class="toolbar__right">
+          <label for="sortSelect" class="dim" style="font-size:0.85rem">Sort by:</label>
+          <select class="field-select select" id="sortSelect">
             <option value="featured">Featured</option>
             <option value="newest">Newest arrivals</option>
             <option value="price-asc">Price: low to high</option>

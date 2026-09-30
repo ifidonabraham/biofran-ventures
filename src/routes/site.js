@@ -32,8 +32,8 @@ router.get('/site', (req, res) => {
       socials: config.site.socials,
       logo: '/img/logo.svg',
       favicon: '/img/favicon.svg',
-      heroImage: '/img/hero.svg',
-      heroPreview: '/img/hero.svg?size=1600'
+      heroImage: '/img/hero.jpg',
+      heroPreview: '/img/hero.jpg'
     },
     currency: config.currency,
     commerce: {
@@ -61,8 +61,8 @@ router.get('/site', (req, res) => {
         icon: 'flame',
         phone: '08141256339',
         category: 'gas-refill',
-        image: '/img/c/gas-refill.svg',
-        preview: '/img/c/gas-refill.svg?size=1400'
+        image: catalog.categoryByKey('gas-refill')?.image || 'https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=800&q=80',
+        preview: catalog.categoryByKey('gas-refill')?.preview || 'https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=800&q=80'
       },
       {
         key: 'gas-accessories',
@@ -72,8 +72,8 @@ router.get('/site', (req, res) => {
         icon: 'regulator',
         phone: '08141256339',
         category: 'gas-accessories',
-        image: '/img/c/gas-accessories.svg',
-        preview: '/img/c/gas-accessories.svg?size=1400'
+        image: catalog.categoryByKey('gas-accessories')?.image || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
+        preview: catalog.categoryByKey('gas-accessories')?.preview || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80'
       },
       {
         key: 'camp-gas',
@@ -83,8 +83,8 @@ router.get('/site', (req, res) => {
         icon: 'canister',
         phone: '08141256339',
         category: 'camp-gas',
-        image: '/img/c/camp-gas.svg',
-        preview: '/img/c/camp-gas.svg?size=1400'
+        image: catalog.categoryByKey('camp-gas')?.image || 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=800&q=80',
+        preview: catalog.categoryByKey('camp-gas')?.preview || 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=800&q=80'
       },
       {
         key: 'cooking-stoves',
@@ -94,8 +94,8 @@ router.get('/site', (req, res) => {
         icon: 'stove',
         phone: '08141256339',
         category: 'cooking-stoves',
-        image: '/img/c/cooking-stoves.svg',
-        preview: '/img/c/cooking-stoves.svg?size=1400'
+        image: catalog.categoryByKey('cooking-stoves')?.image || 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
+        preview: catalog.categoryByKey('cooking-stoves')?.preview || 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80'
       },
       {
         key: 'camp-stoves',
@@ -105,8 +105,8 @@ router.get('/site', (req, res) => {
         icon: 'campstove',
         phone: '08141256339',
         category: 'camp-stoves',
-        image: '/img/c/camp-stoves.svg',
-        preview: '/img/c/camp-stoves.svg?size=1400'
+        image: catalog.categoryByKey('camp-stoves')?.image || 'https://images.unsplash.com/photo-1525811902-f2342640856e?auto=format&fit=crop&w=800&q=80',
+        preview: catalog.categoryByKey('camp-stoves')?.preview || 'https://images.unsplash.com/photo-1525811902-f2342640856e?auto=format&fit=crop&w=800&q=80'
       },
       {
         key: 'appliances',
@@ -116,8 +116,8 @@ router.get('/site', (req, res) => {
         icon: 'fridge',
         phone: '08141256339',
         category: 'home-appliances',
-        image: '/img/c/home-appliances.svg',
-        preview: '/img/c/home-appliances.svg?size=1400'
+        image: catalog.categoryByKey('home-appliances')?.image || 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=800&q=80',
+        preview: catalog.categoryByKey('home-appliances')?.preview || 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=800&q=80'
       }
     ],
     property: {
@@ -128,8 +128,8 @@ router.get('/site', (req, res) => {
       phone: '07045723013',
       email: 'francisifidon3@gmail.com',
       listingCount: propertyModel.all().length,
-      image: '/img/pr/featured.svg',
-      preview: '/img/pr/featured.svg?size=1400'
+      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80',
+      preview: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80'
     }
   });
 });

@@ -151,21 +151,45 @@ const CATEGORIES = [
   }
 ];
 
+const CATEGORY_IMAGES = {
+  'men-clothing': 'https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?auto=format&fit=crop&w=800&q=80',
+  'women-clothing': 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80',
+  'shoes': 'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80',
+  'bags': 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80',
+  'watches': 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80',
+  'glasses': 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80',
+  'home-appliances': 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=800&q=80',
+  'kitchen-appliances': 'https://images.unsplash.com/photo-1570222094114-d054a817e56b?auto=format&fit=crop&w=800&q=80',
+  'gas-refill': 'https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=800&q=80',
+  'gas-accessories': 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
+  'camp-gas': 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=800&q=80',
+  'cooking-stoves': 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
+  'camp-stoves': 'https://images.unsplash.com/photo-1525811902-f2342640856e?auto=format&fit=crop&w=800&q=80'
+};
+
+const GROUP_IMAGES = {
+  'fashion': 'https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?auto=format&fit=crop&w=800&q=80',
+  'appliances': 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=800&q=80',
+  'gas': 'https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=800&q=80'
+};
+
 const BY_KEY = CATEGORIES.reduce((acc, c) => {
+  const img = CATEGORY_IMAGES[c.key] || `/img/c/${c.key}.svg`;
   acc[c.key] = {
     ...c,
-    image: `/img/c/${c.key}.svg`,
-    preview: `/img/c/${c.key}.svg?size=1400`
+    image: img,
+    preview: img
   };
   return acc;
 }, {});
 
 const GROUPS_BY_KEY = GROUPS.reduce((acc, g) => {
+  const img = GROUP_IMAGES[g.key] || `/img/c/group-${g.key}.svg`;
   acc[g.key] = {
     ...g,
     children: CATEGORIES.filter((c) => c.group === g.key).map((c) => c.key),
-    image: `/img/c/group-${g.key}.svg`,
-    preview: `/img/c/group-${g.key}.svg?size=1400`
+    image: img,
+    preview: img
   };
   return acc;
 }, {});

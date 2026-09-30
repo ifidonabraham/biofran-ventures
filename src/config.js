@@ -16,9 +16,15 @@ const config = {
   env: process.env.NODE_ENV || 'development',
   port: Number(process.env.PORT || 3000),
   sessionSecret: process.env.SESSION_SECRET || 'biofran-ventures-dev-secret',
+  // Vercel (and other serverless platforms) have a read-only filesystem at
+  // runtime, except for /tmp.  When DATA_DIR is not explicitly set and we
+  // detect a Vercel deployment, fall back to /tmp/biofran-data so the JSON
+  // store can still initialise without crashing.
   dataDir: process.env.DATA_DIR
     ? path.resolve(ROOT, process.env.DATA_DIR)
-    : path.join(ROOT, 'data'),
+    : process.env.VERCEL
+      ? '/tmp/biofran-data'
+      : path.join(ROOT, 'data'),
   publicDir: path.join(ROOT, 'public'),
   currency: { code: 'NGN', symbol: '₦', locale: 'en-NG' },
 

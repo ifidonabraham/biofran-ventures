@@ -22,6 +22,7 @@ const messageModel = require('../models/message');
 const { asyncHandler } = require('../middleware/errors');
 const { requireAdmin } = require('../middleware/auth');
 const { slugify } = require('../utils');
+const catalog = require('../catalog');
 
 const router = express.Router();
 
@@ -154,8 +155,8 @@ router.post(
       description: body.description || '',
       shortDescription: body.description || '',
       icon: body.icon || 'generic',
-      image: `/img/p/${slug}.svg`,
-      preview: `/img/p/${slug}.svg?size=1400`,
+      image: body.image || catalog.categoryByKey(body.category || 'men-clothing')?.image || 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80',
+      preview: body.preview || body.image || catalog.categoryByKey(body.category || 'men-clothing')?.preview || 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80',
       active: body.active !== false
     };
 
@@ -175,7 +176,7 @@ router.post(
       specs: body.specs || {},
       gallery: [
         { label: 'Front view', url: doc.image, preview: doc.preview },
-        { label: 'Detail', url: `/img/p/${slug}.svg?v=2`, preview: `/img/p/${slug}.svg?v=2&size=1400` }
+        { label: 'Detail', url: doc.image, preview: doc.preview }
       ],
       tags: [],
       searchText: `${name} ${body.brand || ''} ${body.category || ''}`.toLowerCase()

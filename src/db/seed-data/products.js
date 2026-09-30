@@ -517,13 +517,13 @@ function buildProducts() {
     while (used.has(slug)) slug = `${slugify(row.n)}-${n++}`;
     used.add(slug);
 
-    const image = `/img/p/${slug}.svg`;
-    const preview = `/img/p/${slug}.svg?size=1400`;
+    const image = category && category.image ? category.image : `/img/p/${slug}.svg`;
+    const preview = image;
 
     const gallery = [
       { label: 'Front view', url: image, preview },
-      { label: 'Detail close-up', url: `/img/p/${slug}.svg?v=2`, preview: `/img/p/${slug}.svg?v=2&size=1400` },
-      { label: 'Styled view', url: `/img/p/${slug}.svg?v=3`, preview: `/img/p/${slug}.svg?v=3&size=1400` }
+      { label: 'Detail close-up', url: image, preview },
+      { label: 'Styled view', url: image, preview }
     ];
 
     const brands = Object.keys(BRAND_CODES);

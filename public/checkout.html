@@ -35,59 +35,84 @@
   </div>
 
   <div class="container-wide" id="checkoutHost" style="padding-bottom:4rem">
-    <div class="checkout-layout" style="display:grid;grid-template-columns:1fr 420px;gap:2.5rem;align-items:start">
-      <form id="checkoutForm" class="card" style="padding:2rem">
-        <h3 style="margin-bottom:1.2rem">1. Contact &amp; Delivery Information</h3>
-        <div class="grid grid--2" style="gap:1rem">
-          <div class="field">
-            <label for="name">Full Name *</label>
-            <input class="field-input" type="text" id="name" name="name" required placeholder="e.g. Chukwuma Adeleke">
+    <div class="checkout-layout">
+      <form id="checkoutForm">
+        <!-- Step 1: Contact & Delivery -->
+        <div class="step-card">
+          <div class="step-card__head">
+            <span class="step-card__num">1</span>
+            <h3>Contact &amp; Delivery Information</h3>
+          </div>
+          <div class="grid grid--2" style="gap:1rem">
+            <div class="field">
+              <label for="name">Full Name *</label>
+              <input class="field-input" type="text" id="name" name="name" required placeholder="e.g. Chukwuma Adeleke">
+            </div>
+            <div class="field">
+              <label for="phone">Phone Number *</label>
+              <input class="field-input" type="tel" id="phone" name="phone" required placeholder="e.g. 0803 721 1227">
+            </div>
+          </div>
+
+          <div class="field" style="margin-top:1rem">
+            <label for="email">Email Address *</label>
+            <input class="field-input" type="email" id="email" name="email" required placeholder="name@example.com">
+          </div>
+
+          <div class="field" style="margin-top:1rem">
+            <label for="addressLine1">Delivery Address *</label>
+            <input class="field-input" type="text" id="addressLine1" name="addressLine1" required placeholder="Street address or nearest landmark">
+          </div>
+
+          <div class="grid grid--2" style="gap:1rem;margin-top:1rem">
+            <div class="field">
+              <label for="city">City / Area *</label>
+              <input class="field-input" type="text" id="city" name="city" required placeholder="e.g. Benin City">
+            </div>
+            <div class="field">
+              <label for="state">State</label>
+              <input class="field-input" type="text" id="state" name="state" placeholder="e.g. Edo State">
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Delivery Method -->
+        <div class="step-card">
+          <div class="step-card__head">
+            <span class="step-card__num">2</span>
+            <h3>Delivery Method</h3>
+          </div>
+          <div id="deliveryOptions" class="options-group">
+            <!-- Rendered by checkout.js -->
+          </div>
+        </div>
+
+        <!-- Step 3: Payment Method -->
+        <div class="step-card">
+          <div class="step-card__head">
+            <span class="step-card__num">3</span>
+            <h3>Payment Method</h3>
+          </div>
+          <div id="paymentOptions" class="options-group">
+            <!-- Rendered by checkout.js -->
+          </div>
+        </div>
+
+        <!-- Step 4: Notes & Place Order -->
+        <div class="step-card">
+          <div class="step-card__head">
+            <span class="step-card__num">4</span>
+            <h3>Order Notes &amp; Confirmation</h3>
           </div>
           <div class="field">
-            <label for="phone">Phone Number *</label>
-            <input class="field-input" type="tel" id="phone" name="phone" required placeholder="e.g. 0803 721 1227">
+            <label for="notes">Order Notes (optional)</label>
+            <textarea class="field-input" id="notes" name="notes" rows="2" placeholder="Special delivery instructions, gate directions, or landmark"></textarea>
           </div>
-        </div>
 
-        <div class="field" style="margin-top:1rem">
-          <label for="email">Email Address *</label>
-          <input class="field-input" type="email" id="email" name="email" required placeholder="name@example.com">
+          <button class="btn btn--gold btn--lg" type="submit" style="width:100%;margin-top:1.5rem">
+            Place Order &amp; Confirm
+          </button>
         </div>
-
-        <div class="field" style="margin-top:1rem">
-          <label for="addressLine1">Delivery Address *</label>
-          <input class="field-input" type="text" id="addressLine1" name="addressLine1" required placeholder="Street address or nearest landmark">
-        </div>
-
-        <div class="grid grid--2" style="gap:1rem;margin-top:1rem">
-          <div class="field">
-            <label for="city">City / Area *</label>
-            <input class="field-input" type="text" id="city" name="city" required placeholder="e.g. Benin City">
-          </div>
-          <div class="field">
-            <label for="state">State</label>
-            <input class="field-input" type="text" id="state" name="state" placeholder="e.g. Edo State">
-          </div>
-        </div>
-
-        <h3 style="margin:2rem 0 1rem">2. Delivery Method</h3>
-        <div id="deliveryOptions" class="options-group">
-          <!-- Rendered by checkout.js -->
-        </div>
-
-        <h3 style="margin:2rem 0 1rem">3. Payment Method</h3>
-        <div id="paymentOptions" class="options-group">
-          <!-- Rendered by checkout.js -->
-        </div>
-
-        <div class="field" style="margin-top:1.5rem">
-          <label for="notes">Order Notes (optional)</label>
-          <textarea class="field-input" id="notes" name="notes" rows="2" placeholder="Special delivery instructions or gate directions"></textarea>
-        </div>
-
-        <button class="btn btn--gold btn--lg" type="submit" style="width:100%;margin-top:2rem">
-          Place Order &amp; Confirm
-        </button>
       </form>
 
       <div id="checkoutSummary">

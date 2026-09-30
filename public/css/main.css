@@ -12,7 +12,16 @@
   --ink-500: #232c40;
   --line: rgba(255, 255, 255, 0.09);
   --line-strong: rgba(255, 255, 255, 0.18);
-  --border: rgba(255, 255, 255, 0.09);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --border-gold: rgba(212, 169, 74, 0.35);
+  --surface: #0e1422;
+  --surface-2: #141c2e;
+  --surface-3: #1a243a;
+  --surface-card: rgba(17, 23, 37, 0.7);
+  --gold: var(--gold-400);
+  --gold-light: var(--gold-200);
+  --error: var(--danger);
 
   --gold-100: #fbf3dd;
   --gold-200: #f5e3b6;
